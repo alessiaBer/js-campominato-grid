@@ -8,3 +8,24 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
 con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe; */
+
+// seleziono l'elemento container della DOM e lo assegno a una variabile
+const containerEl = document.querySelector('.container');
+// attraverso un ciclo creo per ogni i una cell
+for (let i = 1; i <= 100; i++) {
+    // creo nella DOM un elemento .cell e lo assegno ad una variabile
+    //assegno all'interno della cell l'html corrispondente al suo index
+    const cellEl = document.createElement('div');
+    cellEl.classList.add('cell');
+    
+
+    cellEl.innerHTML = `${i}`;
+    console.log(cellEl);
+
+    //appendo le cell create all'elemento container
+    containerEl.append(cellEl);
+}
+
+
+
+
