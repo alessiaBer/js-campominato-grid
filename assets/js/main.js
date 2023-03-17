@@ -11,20 +11,28 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 
 // seleziono l'elemento container della DOM e lo assegno a una variabile
 const containerEl = document.querySelector('.container');
-// attraverso un ciclo creo per ogni i una cell
-for (let i = 1; i <= 100; i++) {
-    // creo nella DOM un elemento div e lo assegno ad una variabile
-    const cellEl = document.createElement('div');
-    //aggiungo all'elemento la classe .cell
-    cellEl.classList.add('cell');
-    
-    //assegno all'interno della cell l'html corrispondente al suo index
-    cellEl.innerHTML = `${i}`;
-    console.log(cellEl);
 
-    //appendo le cell create all'elemento container
-    containerEl.append(cellEl);
+//seleziono l'elemento .btn dellaDOM e lo assegno ad una variabile
+const playBtn = document.querySelector('.btn-info');
+// assegno al btn un event listener per il click 
+playBtn.addEventListener('click', function() {
+    //al click:
+    // attraverso un ciclo creo per ogni i una cell
+    for (let i = 1; i <= 100; i++) {
+        // creo nella DOM un elemento div e lo assegno ad una variabile
+        const cellEl = document.createElement('div');
+        //aggiungo all'elemento la classe .cell
+        cellEl.classList.add('cell');
+    
+        //assegno all'interno della cell l'html corrispondente al suo index
+        cellEl.innerHTML = `${i}`;
+        console.log(cellEl);
+
+        //appendo le cell create all'elemento container
+        containerEl.append(cellEl);
 }
+})
+
 
 
 
