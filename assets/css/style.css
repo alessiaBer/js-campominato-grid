@@ -10,3 +10,7 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.btn {
+    background-color: var(--bs-purple);
+}

@@ -13,12 +13,12 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 const containerEl = document.querySelector('.container');
 // attraverso un ciclo creo per ogni i una cell
 for (let i = 1; i <= 100; i++) {
-    // creo nella DOM un elemento .cell e lo assegno ad una variabile
-    //assegno all'interno della cell l'html corrispondente al suo index
+    // creo nella DOM un elemento div e lo assegno ad una variabile
     const cellEl = document.createElement('div');
+    //aggiungo all'elemento la classe .cell
     cellEl.classList.add('cell');
     
-
+    //assegno all'interno della cell l'html corrispondente al suo index
     cellEl.innerHTML = `${i}`;
     console.log(cellEl);
 
