@@ -2,7 +2,9 @@
 L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
 Ogni cella ha un numero progressivo, da 1 a 100.
 Ci saranno quindi 10 caselle per ognuna delle 10 righe.
-Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
+Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro 
+ed emetto un messaggio in console con il numero della cella cliccata.
+
 Bonus
 Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
 con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
@@ -26,12 +28,35 @@ playBtn.addEventListener('click', function() {
     
         //assegno all'interno della cell l'html corrispondente al suo index
         cellEl.innerHTML = `${i}`;
-        console.log(cellEl);
 
         //appendo le cell create all'elemento container
         containerEl.append(cellEl);
-}
+    }
 })
+
+//seleziono tutte le celle e le assegno ad una variabile
+const cells = document.querySelectorAll('.cell');
+
+// ciclo dentro alla variabile cells per selezionare ogni cella
+for (let i = 0; i < cells.length; i++) {
+    //seleziono ogni singola casella e la assegno ad una variabile
+    const thisCell = cells[i];
+
+    //aggiungo un event listener al click
+    thisCell.addEventListener('click', function() {
+        //toggle la classe background azzurro
+        thisCell.classList.toggle('bg_light_blue');
+        //console log il numero della casella
+        console.log(`hai cliccato la casella ${thisCell.innerHTML}`);
+        })
+    }
+
+
+
+
+
+
+
 
 
 

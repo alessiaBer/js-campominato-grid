@@ -14,3 +14,7 @@ body{
 .btn {
     background-color: var(--bs-purple);
 }
+
+.bg_light_blue {
+    background-color: aqua;
+}
