@@ -32,24 +32,26 @@ playBtn.addEventListener('click', function() {
         //appendo le cell create all'elemento container
         containerEl.append(cellEl);
     }
-})
 
-//seleziono tutte le celle e le assegno ad una variabile
-const cells = document.querySelectorAll('.cell');
 
-// ciclo dentro alla variabile cells per selezionare ogni cella
-for (let i = 0; i < cells.length; i++) {
-    //seleziono ogni singola casella e la assegno ad una variabile
-    const thisCell = cells[i];
+    //seleziono tutte le celle e le assegno ad una variabile
+    const cells = document.querySelectorAll('.cell');
+    console.log(cells)
 
-    //aggiungo un event listener al click
-    thisCell.addEventListener('click', function() {
-        //toggle la classe background azzurro
-        thisCell.classList.toggle('bg_light_blue');
-        //console log il numero della casella
-        console.log(`hai cliccato la casella ${thisCell.innerHTML}`);
+    // ciclo dentro alla variabile cells per selezionare ogni cella
+    for (let i = 0; i < cells.length; i++) {
+        //seleziono ogni singola casella e la assegno ad una variabile
+        const thisCell = cells[i];
+
+        //aggiungo un event listener al click
+        thisCell.addEventListener('click', function() {
+            //toggle la classe background azzurro
+            thisCell.classList.toggle('bg_light_blue');
+            //console log il numero della casella
+            console.log(`hai cliccato la casella ${thisCell.innerHTML}`);
         })
     }
+})
 
 
 
