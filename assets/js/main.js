@@ -16,6 +16,8 @@ const containerEl = document.querySelector('.container');
 
 //seleziono l'elemento .btn dellaDOM e lo assegno ad una variabile
 const playBtn = document.querySelector('.btn-info');
+
+
 // assegno al btn un event listener per il click 
 playBtn.addEventListener('click', function() {
     //al click:
@@ -36,7 +38,6 @@ playBtn.addEventListener('click', function() {
 
     //seleziono tutte le celle e le assegno ad una variabile
     const cells = document.querySelectorAll('.cell');
-    console.log(cells)
 
     // ciclo dentro alla variabile cells per selezionare ogni cella
     for (let i = 0; i < cells.length; i++) {
