@@ -1,5 +1,10 @@
 body{
     background-color: aquamarine;
+    height: 100vh;
+}
+
+main {
+    padding-bottom: 80px;
 }
 
 .cell {
@@ -17,4 +22,12 @@ body{
 
 .bg_light_blue {
     background-color: aqua;
+}
+
+footer {
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }

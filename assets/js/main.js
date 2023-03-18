@@ -24,7 +24,8 @@ let level = 0;
 
 options.addEventListener('click', function(){
 
-options.addEventListener('change', function(){
+    options.addEventListener('change', function(){
+
         if (options.value == 1) {
             level = 1;
         } else if (options.value == 2) {
@@ -35,7 +36,11 @@ options.addEventListener('change', function(){
 
         playBtn.classList.add(`level-${level}`);
         console.log(playBtn);
-})
+    })
+
+    
+    playBtn.classList.remove(`level-${level}`);
+
 });
 
 
@@ -43,7 +48,6 @@ options.addEventListener('change', function(){
 playBtn.addEventListener('click', function generate(level) {
     //al click:
 
-    
     //per ripulire ogni volta la pagina
     containerEl.innerHTML = '';
 
@@ -82,6 +86,7 @@ playBtn.addEventListener('click', function generate(level) {
             console.log(`hai cliccato la casella ${thisCell.innerHTML}`);
         })
     }
+
 })
 
 
