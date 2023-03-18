@@ -17,84 +17,55 @@ const containerEl = document.querySelector('.container');
 //seleziono l'elemento .btn dellaDOM e lo assegno ad una variabile
 const playBtn = document.querySelector('.btn-info');
 
-// attraverso un ciclo creo per ogni i una cell
-
+//seleziono l'elemento select presente nella DOM
 const options = document.getElementById('levels');
 
-for (let i = 0; i < options.length; i++) {
-    const thisOption = options[i].value;
-    console.log(thisOption);
+let level = 0;
 
-    /* 
-    thisOption.addEventListener('click', function(){
-        if (thisOption.value === 1) {
-       level1(); 
-        console.log('1')
-        } else if (thisOption.value === 2) {
-        level2();
-        console.log('2')
-        } else if (thisOption.value === 3) {
-        level3(); 
-        console.log('3');
+options.addEventListener('click', function(){
+
+options.addEventListener('change', function(){
+        if (options.value == 1) {
+            level = 1;
+        } else if (options.value == 2) {
+            level = 2;
+        } else if (options.value == 3) {
+            level = 3;
         }
 
-    }) */
-}
+        playBtn.classList.add(`level-${level}`);
+        console.log(playBtn);
+})
+});
 
 
+// assegno al btn un event listener per il click 
+playBtn.addEventListener('click', function generate(level) {
+    //al click:
 
-function level1() {
+    
+    //per ripulire ogni volta la pagina
+    containerEl.innerHTML = '';
+
     for (let i = 1; i <= 100; i++) {
         // creo nella DOM un elemento div e lo assegno ad una variabile
         const cellEl = document.createElement('div');
         //aggiungo all'elemento la classe .cell
         cellEl.classList.add('cell');
-        cellEl.style.width = 'calc(100% / 10)';
+
+            if (playBtn.classList.contains('level-2')) {
+                cellEl.style.width = 'calc(100% / 9)'
+            } else if (playBtn.classList.contains('level-3')) {
+                cellEl.style.width = 'calc(100% / 7)'
+            }
+        
+        //assegno all'interno della cell l'html corrispondente al suo index
+        cellEl.innerHTML = `${i}`;
     
-        //assegno all'interno della cell l'html corrispondente al suo index
-        cellEl.innerHTML = `${i}`;
-
         //appendo le cell create all'elemento container
         containerEl.append(cellEl);
-}}
-
-function level2() {
-    for (let i = 1; i <= 81; i++) {
-        // creo nella DOM un elemento div e lo assegno ad una variabile
-        const cellEl = document.createElement('div');
-        //aggiungo all'elemento la classe .cell
-        cellEl.classList.add('cell');
-        cellEl.style.width = 'calc(100% / 9)'
+    }
     
-        //assegno all'interno della cell l'html corrispondente al suo index
-        cellEl.innerHTML = `${i}`;
-
-        //appendo le cell create all'elemento container
-        containerEl.append(cellEl);
-}}
-
-function level3() {
-    for (let i = 1; i <= 49; i++) {
-        // creo nella DOM un elemento div e lo assegno ad una variabile
-        const cellEl = document.createElement('div');
-        //aggiungo all'elemento la classe .cell
-        cellEl.classList.add('cell');
-        cellEl.style.width = 'calc(100% / 7)';
-        //assegno all'interno della cell l'html corrispondente al suo index
-        cellEl.innerHTML = `${i}`;
-
-        //appendo le cell create all'elemento container
-        containerEl.append(cellEl);
-}}
-
-// assegno al btn un event listener per il click 
-playBtn.addEventListener('click', function() {
-    //al click:
-
-    //per ripulire ogni volta la pagina
-    containerEl.innerHTML = '';
-
-
     //seleziono tutte le celle e le assegno ad una variabile
     const cells = document.querySelectorAll('.cell');
 
